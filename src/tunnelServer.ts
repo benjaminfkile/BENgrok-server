@@ -48,7 +48,7 @@ export const handleTunnelProxy = (req: Request, res: Response) => {
   req.on("end", () => {
     const requestData = {
       method: req.method,
-      url: req.url,
+      url: req.url.replace(/^\/tunnel/, ""),
       headers: req.headers,
       body: Buffer.concat(bodyChunks).toString()
     }
