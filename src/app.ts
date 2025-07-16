@@ -16,7 +16,7 @@ app.use(helmet())
 app.all("/tunnel/*", handleTunnelProxy)
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("BENgrok Tunnel Server is running...")
+  res.send("BENgrok tunnel server is running...")
 })
 
 process.on("uncaughtException", (error: Error) => {
